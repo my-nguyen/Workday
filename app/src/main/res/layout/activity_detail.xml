@@ -7,36 +7,81 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/dt_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3"/>
+
         <ImageView
             android:id="@+id/dt_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="fitXY"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/dt_username"
-            android:layout_width="match_parent"
+            android:id="@+id/label_username"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/username"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dt_guideline"
+            app:layout_constraintTop_toBottomOf="@id/dt_image"/>
+
+        <TextView
+            android:id="@+id/dt_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            app:layout_constraintStart_toEndOf="@id/dt_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dt_image"/>
 
         <TextView
-            android:id="@+id/dt_rating"
-            android:layout_width="match_parent"
+            android:id="@+id/label_rating"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/rating"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dt_guideline"
+            app:layout_constraintTop_toBottomOf="@id/label_username"/>
+
+        <TextView
+            android:id="@+id/dt_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            app:layout_constraintStart_toEndOf="@id/dt_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dt_username"/>
 
         <TextView
-            android:id="@+id/dt_source"
-            android:layout_width="match_parent"
+            android:id="@+id/label_source"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/source"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dt_guideline"
+            app:layout_constraintTop_toBottomOf="@id/label_rating"/>
+
+        <TextView
+            android:id="@+id/dt_source"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            app:layout_constraintStart_toStartOf="@id/dt_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/dt_rating"/>
 

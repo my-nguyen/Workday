@@ -15,12 +15,10 @@ class Giphy implements Serializable {
 
     public Giphy(Data data) {
         id = data.id;
-        url = data.url;
         username = data.username;
         rating = data.rating;
         source = data.source;
 
-        this.embedUrl = data.embedUrl;
         this.imageOriginalUrl = data.images.original.url;
         this.imageDownsizedUrl = data.images.downsized.url;
     }

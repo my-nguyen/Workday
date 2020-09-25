@@ -38,7 +38,8 @@ class GiphyAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
-        return Long.parseLong(images.get(i).id);
+        // return Long.parseLong(images.get(i).id);
+        return i;
     }
 
     @Override

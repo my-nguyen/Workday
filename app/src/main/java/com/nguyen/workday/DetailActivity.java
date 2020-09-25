@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import com.nguyen.workday.databinding.ActivityDetailBinding;
 import com.squareup.picasso.Picasso;
 
-class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends AppCompatActivity {
     private ActivityDetailBinding binding;
 
     @Override
@@ -18,7 +18,8 @@ class DetailActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
 
         Giphy giphy = (Giphy)getIntent().getSerializableExtra("EXTRA_GIPHY");
-        Picasso.get().load(giphy.imageDownsizedUrl).into(binding.dtImage);
+        int widthPixels = getResources().getDisplayMetrics().widthPixels;
+        Picasso.get().load(giphy.imageOriginalUrl).resize(widthPixels, 0).into(binding.dtImage);
         binding.dtUsername.setText(giphy.username);
         binding.dtRating.setText(giphy.rating);
         binding.dtSource.setText(giphy.source);
